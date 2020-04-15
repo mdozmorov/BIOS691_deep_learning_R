@@ -41,7 +41,7 @@ This course is an introduction to deep learning theory and practice. It will cov
 
 This is a 1 credit hour course. Both undergraduates and graduate students are welcome to take the course. The class will be conducted via Zoom and include lecture and coding parts. Classes will not be recorded. Course material will be publicly available. The syllabus is subject to change. Observe the [VCU Honor Pledge](https://students.vcu.edu/studentconduct/vcu-honor-system/academic-misconduct-/honor-pledge/) in any class- and homework activities
 
-- Course Website: https://bios691-deep-learning-r.netlify.com
+- Course Website:  https://bios691-deep-learning-r.netlify.com
 
 - Office Hours: contact the instructor with questions and on-demand Zoom meeting requests
 
