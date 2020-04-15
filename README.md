@@ -1,6 +1,6 @@
 # Deep Learning with R
 
-Work in progress development of the course material for the BIOS691 "Deep Learning with R" short course, June 8-12, 2020. The course is largely based on the [**Deep learning with R**](https://www.manning.com/books/deep-learning-with-r) book by François Chollet (the creator of Keras) with J. J. Allaire (the founder of RStudio and the author of the R interfaces to Keras and TensorFlow), and the associated code repository [**R notebooks for the code samples of the book "Deep Learning with R"**](https://github.com/jjallaire/deep-learning-with-r-notebooks). Course web site is https://bios691_deep_learning_R.netlify.com/
+Work in progress development of the course material for the BIOS691 "Deep Learning with R" short course, June 8-12, 2020. The course is largely based on the [**Deep learning with R**](https://www.manning.com/books/deep-learning-with-r) book by François Chollet (the creator of Keras) with J. J. Allaire (the founder of RStudio and the author of the R interfaces to Keras and TensorFlow), and the associated code repository [**R notebooks for the code samples of the book "Deep Learning with R"**](https://github.com/jjallaire/deep-learning-with-r-notebooks). Course web site is https://bios691-deep-learning-r.netlify.com/
 
 ## Site template
 
