@@ -1,0 +1,39 @@
+---
+output:
+  blogdown::html_page
+---
+
+## Installing TensorFlow for R on Windows
+
+Install [Anaconda for Windows](https://www.anaconda.com/products/individual#windows) for Python 3.7 or above</p>
+
+In R, run the following:
+```
+install.packages("keras")
+library(keras)
+install_keras()
+install.packages("tensorflow")
+library(tensorflow)
+install_tensorflow()
+```
+These commands will create `r-reticulate` conda environment</p>
+
+Add `<path_to>\anaconda3\envs\r-reticulate\Scripts;<path_to>\anaconda3\Scripts` to the 'Path' environment variable in Windows. Reboot.</p>
+
+Open `cmd.exe`, initialize conda:
+```
+conda init cmd.exe
+```
+</p>
+
+Activate conda environment:
+```
+conda activate r-reticulate
+```
+</p>
+
+Install TensorFlow 2.0.0:
+```
+python -m pip install tensorflow==2.0.0
+```
+This is a workaround to overcome the error [ImportError: DLL load failed: The specified module could not be found](https://github.com/tensorflow/tensorflow/issues/22794#)
