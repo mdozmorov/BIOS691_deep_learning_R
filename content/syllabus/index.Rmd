@@ -20,8 +20,13 @@ This course is an introduction to deep learning theory and practice. It will cov
 
 - Required textbook: [**Deep learning with R**](https://www.manning.com/books/deep-learning-with-r) by François Chollet (the creator of Keras) with J. J. Allaire (the founder of RStudio and the author of the R interfaces to Keras and TensorFlow), and the associated code repository [**R notebooks for the code samples of the book "Deep Learning with R"**](https://github.com/jjallaire/deep-learning-with-r-notebooks)
 - Familiarity with R/RStudio programming evironment, command line, GitHub
-- No formal course requirements, but understanding of calculus, linear algebra, statistics is necessary
-
+- No formal course requirements, but basic knowledge of the following will help
+    - Basic linear algebra: vectors, matrices, determinants
+    - Simple calculus: derivatives, integrals, gradients
+    - Some probability theory: probability, random variables, distributions
+    - Basic statistics knowledge: descriptive statistics, estimators.
+    - (Linear) modelling
+- Working knowledge of R, familiarity with RStudio programming evironment, command line, GitHub
 - A laptop, Mac or Linux OSs are recommended. GPU (graphics processing unit) is not required
 - R for [**Windows**](http://cran.r-project.org/bin/windows/base/) or [**Mac**](http://cran.r-project.org/bin/macosx/). Review [**Getting Used to R, RStudio, and RMarkdown**](https://ismayc.github.io/rbasics-book/) book, if necessary
 - [**RStudio Desktop**](https://www.rstudio.com/products/rstudio/download/)
@@ -30,6 +35,7 @@ This course is an introduction to deep learning theory and practice. It will cov
 - Docker for [**Windows**](https://hub.docker.com/editions/community/docker-ce-desktop-windows/) or [**Mac**](https://hub.docker.com/editions/community/docker-ce-desktop-mac/) is recommended
 - Windows only: [**Git Bash**](https://git-for-windows.github.io/) or [**Cygwin**](http://www.cygwin.com/)
 - Windows only: [**Rtools**](https://cran.r-project.org/bin/windows/Rtools/)
+- [**Windows-specific instructions on installing Keras and TensorFlow**](tensorflow.html)
 
 ## Learning Objectives
 
@@ -47,14 +53,14 @@ This is a 1 credit hour course. Both undergraduates and graduate students are we
 
 ### Final project
 
-- A take-home final project (teams of two are encouraged) will conclude the course
+- A take-home final project (teams of two are encouraged)
 - Final project should be submitted as a fully reproducible GitHub repository
 - The due date is one month following course end. The exact deadline to be announced
 
 ### Grading Policy
 
 - Online attendance: 10% per class (50% total)
-- Final Project: 50% max
+- Final Project: 0-50% 
 
 This course will be graded on a Pass/Fail Basis. Pass is defined as a grade of at least 70%
 
