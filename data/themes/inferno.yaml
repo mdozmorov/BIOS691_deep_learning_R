@@ -8,7 +8,8 @@ light: true
 primary: "#456355"
 
 # Links
-link: "#456355"
+# link: "#456355"
+link: "#C70039"
 link_hover: "#FCD16B"
 
 # Menu
