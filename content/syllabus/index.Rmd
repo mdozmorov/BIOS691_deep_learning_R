@@ -18,24 +18,32 @@ This course is an introduction to deep learning theory and practice. It will cov
 
 ## Prerequisites
 
-- Required textbook: [**Deep learning with R**](https://www.manning.com/books/deep-learning-with-r) by François Chollet (the creator of Keras) with J. J. Allaire (the founder of RStudio and the author of the R interfaces to Keras and TensorFlow), and the associated code repository [**R notebooks for the code samples of the book "Deep Learning with R"**](https://github.com/jjallaire/deep-learning-with-r-notebooks)
-- Familiarity with R/RStudio programming evironment, command line, GitHub
+- Suggested reading
+    - [Deep learning with R](https://www.manning.com/books/deep-learning-with-r) by François Chollet (the creator of Keras) with J. J. Allaire (the founder of RStudio and the author of the R interfaces to Keras and TensorFlow)
+    - [The Deep Learning textbook](https://www.deeplearningbook.org/) by Ian Goodfellow, Yoshua Bengio and Aaron Courville
+    - [Machine learning and deep learning resources](https://github.com/mdozmorov/MachineLearning_notes) - a collection of references for further studies
+- Code
+    - [**R notebooks for the code samples of the book "Deep Learning with R"**](https://github.com/jjallaire/deep-learning-with-r-notebooks)
+    - [Deep Learning with Keras and TensorFlow in R Workflow](https://github.com/rstudio-conf-2020/dl-keras-tf) - RStudio Conference 2020 workshop by Brad Boehmke
+- Skills
+    - Working knowledge of R, familiarity with RStudio programming evironment, command line, GitHub
 - No formal course requirements, but basic knowledge of the following will help
     - Basic linear algebra: vectors, matrices, determinants
     - Simple calculus: derivatives, integrals, gradients
     - Some probability theory: probability, random variables, distributions
     - Basic statistics knowledge: descriptive statistics, estimators.
     - (Linear) modelling
-- Working knowledge of R, familiarity with RStudio programming evironment, command line, GitHub
-- A laptop, Mac or Linux OSs are recommended. GPU (graphics processing unit) is not required
-- R for [**Windows**](http://cran.r-project.org/bin/windows/base/) or [**Mac**](http://cran.r-project.org/bin/macosx/). Review [**Getting Used to R, RStudio, and RMarkdown**](https://ismayc.github.io/rbasics-book/) book, if necessary
-- [**RStudio Desktop**](https://www.rstudio.com/products/rstudio/download/)
-- [**Git**](https://git-scm.com/downloads)
-- A text editor ([**Notepad++**](https://notepad-plus-plus.org/) on Windows, or [**Sublime text**](https://www.sublimetext.com/) on any platform)
-- Docker for [**Windows**](https://hub.docker.com/editions/community/docker-ce-desktop-windows/) or [**Mac**](https://hub.docker.com/editions/community/docker-ce-desktop-mac/) is recommended
-- Windows only: [**Git Bash**](https://git-for-windows.github.io/) or [**Cygwin**](http://www.cygwin.com/)
-- Windows only: [**Rtools**](https://cran.r-project.org/bin/windows/Rtools/)
-- [**Windows-specific instructions on installing Keras and TensorFlow**](tensorflow.html)
+- Hardware
+    - A laptop, Mac or Linux OSs are recommended. GPU (graphics processing unit) is not required
+- Software
+    - R for [**Windows**](http://cran.r-project.org/bin/windows/base/) or [**Mac**](http://cran.r-project.org/bin/macosx/). Review [**Getting Used to R, RStudio, and RMarkdown**](https://ismayc.github.io/rbasics-book/) book, if necessary
+    - [**RStudio Desktop**](https://www.rstudio.com/products/rstudio/download/)
+    - [**Git**](https://git-scm.com/downloads)
+    - A text editor ([**Notepad++**](https://notepad-plus-plus.org/) on Windows, or [**Sublime text**](https://www.sublimetext.com/) on any platform)
+    - Optional: Docker for [**Windows**](https://hub.docker.com/editions/community/docker-ce-desktop-windows/) or [**Mac**](https://hub.docker.com/editions/community/docker-ce-desktop-mac/) is recommended
+    - Windows only: [**Git Bash**](https://git-for-windows.github.io/) or [**Cygwin**](http://www.cygwin.com/)
+    - Windows only: [**Rtools**](https://cran.r-project.org/bin/windows/Rtools/)
+    - [**Windows-specific instructions on installing Keras and TensorFlow**](tensorflow.html)
 
 ## Learning Objectives
 
