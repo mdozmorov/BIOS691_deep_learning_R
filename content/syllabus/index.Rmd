@@ -12,9 +12,9 @@ output:
 
 ## Course Description
 
-Deep learning is an actively growing machine learning field for many research and application areas, such as computer vision, speech recognition, timeseries forecasting. It is becoming the state-of-the-art approach among machine learning methods, especially suitable for extracting useful information from large, unstructured datasets.
+Deep learning is an actively growing machine learning field for many research and application areas, such as computer vision, speech recognition, time series forecasting. It is becoming the state-of-the-art approach among machine learning methods, especially suitable for extracting useful information from large, unstructured datasets.
 
-This course is an introduction to deep learning theory and practice. It will cover basics of neural network architectures, main statistical concepts behind training neural networks, and implementation aspects. The main focus will be on programming deep neural networks using TensorFlow and its Keras front-end in R, although the knowledge will also be useful for Python practitioners. The goal of this course is to build foundation for understanting and implementing deep learning approaches, and provide material for further development.
+This course is an introduction to deep learning theory and practice. It will cover the basics of neural network architectures, main statistical concepts behind training neural networks, and implementation aspects. The main focus will be on programming deep neural networks using TensorFlow and its Keras front-end in R, although the knowledge will also be useful for Python practitioners. The goal of this course is to build a foundation for general understanding of deep learning and hands-on implementation of main types of neural network architectures and provide material for further development.
 
 ## Prerequisites
 
@@ -26,13 +26,13 @@ This course is an introduction to deep learning theory and practice. It will cov
     - [**R notebooks for the code samples of the book "Deep Learning with R"**](https://github.com/jjallaire/deep-learning-with-r-notebooks)
     - [Deep Learning with Keras and TensorFlow in R Workflow](https://github.com/rstudio-conf-2020/dl-keras-tf) - RStudio Conference 2020 workshop by Brad Boehmke
 - Skills
-    - Working knowledge of R, familiarity with RStudio programming evironment, command line, GitHub
+    - Working knowledge of R, familiarity with RStudio programming environment, command line, GitHub
 - No formal course requirements, but basic knowledge of the following will help
     - Basic linear algebra: vectors, matrices, determinants
     - Simple calculus: derivatives, integrals, gradients
     - Some probability theory: probability, random variables, distributions
     - Basic statistics knowledge: descriptive statistics, estimators.
-    - (Linear) modelling
+    - (Linear) modeling
 - Hardware
     - A laptop, Mac or Linux OSs are recommended. GPU (graphics processing unit) is not required
 - Software
@@ -57,20 +57,20 @@ This is a 1 credit hour course. Both undergraduates and graduate students are we
 
 - Course Website:  https://bios691-deep-learning-r.netlify.com
 
-- Office Hours: contact the instructor with questions and on-demand Zoom meeting requests
+- Office Hours: contact the Instructor with questions and on-demand Zoom meeting requests
 
 ### Final project
 
 - A take-home final project (teams of two are encouraged)
 - Final project should be submitted as a fully reproducible GitHub repository
-- The due date is one month following course end. The exact deadline to be announced
+- The due date is one month following the course end. The exact deadline to be announced
 
 ### Grading Policy
 
 - Online attendance: 10% per class (50% total)
 - Final Project: 0-50% 
 
-This course will be graded on a Pass/Fail Basis. Pass is defined as a grade of at least 70%
+This course will be graded on a Pass/Fail basis. Pass is defined as a grade of at least 70%
 
 ## Copyright
 
@@ -78,7 +78,7 @@ Every reasonable effort has been made to protect the copyright requirements of m
 
 ## Diversity and inclusivity
 
-A primary goal of this course is to be inclusive and of value to the largest number of contributors, with the most varied and diverse backgrounds possible. All participants in this course are encouraged to help providing a friendly, safe and welcoming environment for all, regardless of age, gender, gender identity or expression, culture, ethnicity, language, national origin, political beliefs, profession, race, religion, sexual orientation, socioeconomic status, and technical ability.
+A primary goal of this course is to be inclusive and of value to the largest number of contributors, with the most varied and diverse backgrounds possible. All participants in this course are encouraged to help to provide a friendly, safe and welcoming environment for all, regardless of age, gender, gender identity or expression, culture, ethnicity, language, national origin, political beliefs, profession, race, religion, sexual orientation, socioeconomic status, and technical ability.
 
 ## Other policies
 
@@ -87,10 +87,9 @@ A primary goal of this course is to be inclusive and of value to the largest num
 <!--
 ### Late Policy
 
-Students get 1 free assignment to submit late without penalties. Please email us through Sakai that you need more time. If you need accomodation, please email us so we can figure out a way to help you.
+Students get 1 free assignment to submit late without penalties. Please email us through Sakai that you need more time. If you need accommodation, please email us so we can figure out a way to help you.
 
-Graduate Studies in the OHSU School of Medicine is committed to providing grades to students in a timely manner. Course instructors will provide students with information in writing at the beginning of each
-course that describes the grading policies and procedures including but not limited to evaluation criteria, expected time needed to grade individual student examinations and type of feedback they will provide.
+Graduate Studies in the OHSU School of Medicine is committed to providing grades to students in a timely manner. Course instructors will provide students with information in writing at the beginning of each course that describes the grading policies and procedures, including but not limited to evaluation criteria, expected time needed to grade individual student examinations and type of feedback they will provide.
 
 Class grades are due to the Registrar by the Friday following the week of finals. However, on those occasions when a grade has not been submitted by the deadline, the following procedure shall be followed:
 
