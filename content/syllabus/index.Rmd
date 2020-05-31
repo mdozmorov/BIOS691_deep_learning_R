@@ -19,7 +19,7 @@ This course is an introduction to deep learning theory and practice. It will cov
 ## Prerequisites
 
 - Suggested reading
-    - [Deep learning with R](https://www.manning.com/books/deep-learning-with-r) by François Chollet (the creator of Keras) with J. J. Allaire (the founder of RStudio and the author of the R interfaces to Keras and TensorFlow)
+    - [**Deep learning with R**](https://www.manning.com/books/deep-learning-with-r) by François Chollet (the creator of Keras) with J. J. Allaire (the founder of RStudio and the author of the R interfaces to Keras and TensorFlow)
     - [The Deep Learning textbook](https://www.deeplearningbook.org/) by Ian Goodfellow, Yoshua Bengio and Aaron Courville
     - [Machine learning and deep learning resources](https://github.com/mdozmorov/MachineLearning_notes) - a collection of references for further studies
 - Code
