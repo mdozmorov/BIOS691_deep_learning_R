@@ -14,7 +14,7 @@ output:
 
 Deep learning is an actively growing machine learning field for many research and application areas, such as computer vision, speech recognition, time series forecasting. It is becoming the state-of-the-art approach among machine learning methods, especially suitable for extracting useful information from large, unstructured datasets.
 
-This course is an introduction to deep learning theory and practice. It will cover the basics of neural network architectures, main statistical concepts behind training neural networks, and implementation aspects. The main focus will be on programming deep neural networks using TensorFlow and its Keras front-end in R, although the knowledge will also be useful for Python practitioners. The goal of this course is to build a foundation for general understanding of deep learning and hands-on implementation of main types of neural network architectures and provide material for further development.
+This course is an introduction to deep learning theory and practice. It will cover the basics of neural network architectures, main statistical concepts behind training neural networks, and implementation aspects. The main focus will be on programming deep neural networks using TensorFlow and its Keras front-end in R, although the knowledge will also be useful for Python practitioners. The goal of this course is to build a foundation for general understanding of deep learning and hands-on implementation of main types of neural network architectures, and provide material for further development.
 
 ## Prerequisites
 
