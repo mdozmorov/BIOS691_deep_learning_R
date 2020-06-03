@@ -21,6 +21,7 @@ This course is an introduction to deep learning theory and practice. It will cov
 - Suggested reading
     - [**Deep learning with R**](https://www.manning.com/books/deep-learning-with-r) by François Chollet (the creator of Keras) with J. J. Allaire (the founder of RStudio and the author of the R interfaces to Keras and TensorFlow)
     - [The Deep Learning textbook](https://www.deeplearningbook.org/) by Ian Goodfellow, Yoshua Bengio and Aaron Courville
+    - [MIT Introduction to Deep Learning | 6.S191](https://www.youtube.com/watch?v=njKP3FqW3Sk&list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI) - MIT video course by Alexander Amini & Ava Soleimani, dense and informative ~45min lectures covering various topics of deep learning. [introtodeeplearning.com](http://introtodeeplearning.com/) - course web site with slides, video, and other material
     - [Machine learning and deep learning resources](https://github.com/mdozmorov/MachineLearning_notes) - a collection of references for further studies
 - Code
     - [**R notebooks for the code samples of the book "Deep Learning with R"**](https://github.com/jjallaire/deep-learning-with-r-notebooks)
