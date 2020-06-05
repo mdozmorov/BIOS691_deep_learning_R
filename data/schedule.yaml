@@ -14,19 +14,19 @@ lessons:
 #    assignment: "02-problem-set"
 #    class: "02-class"
 
-  - title: '**Day 3: Overfitting, working with text**'
+  - title: '**Day 3: Overfitting, regularization, dropout, pretrained models, word embedding**'
     date: "June 10"
 #    reading: "03-reading"
 #    assignment: "03-problem-set"
 #    class: "03-class"
 
-  - title: '**Day 4: Convolutional Neural Networks, working with images**'
+  - title: '**Day 4: Convolutional Neural Networks, images**'
     date: "June 11"
 #    reading: "04-reading"
 #    assignment: "04-problem-set"
 #    class: "04-class"
 
-  - title: "**Day 5: Autoencoders, Recurrent Neural Networks, LSTMs, sequence learning**"
+  - title: "**Day 5: Generative Adversarial Networks, Autoencoders, Recurrent Neural Networks, LSTMs, sequence learning**"
     date: "June 12"
 #    reading: "05-reading"
 #    assignment: "05-problem-set"
