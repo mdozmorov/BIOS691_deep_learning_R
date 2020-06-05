@@ -8,7 +8,7 @@ main:
   - name: Readings
     url: /reading/
     weight: 3
-  - name: Assignments
+  - name: Code
     url: /assignment/
     weight: 4
   - name: Classes
@@ -17,8 +17,8 @@ main:
 #   - name: RStudio.cloud
 #     url: https://rstudio.cloud/
 #     weight: 7
-assignment:
-  - name: Assignments
-    weight: 1
-  - name: Problem sets
-    weight: 2
+# assignment:
+#   - name: Code
+#     weight: 1
+#   - name: Problem sets
+#     weight: 2
