@@ -3,11 +3,11 @@ title: "Schedule"
 slug: schedule
 ---
 
-Here's your roadmap for the quarter!
+Class materials (references, code examples, slides, etc.) will be added on the day of class
 
-- <i class="fas fa-book-reader"></i> Review links and references in the slides
-<!-- - <i class="fas fa-laptop-code"></i> Assignments are due by **11:59 PM** on the day they are due -->
-- <i class="fas fa-chalkboard-teacher"></i> Class materials (slides, in-class activities, etc.) will be added on the day of class
+- <i class="fas fa-book-reader"></i> Review references
+- <i class="fas fa-laptop-code"></i> Review and run code examples for each class
+- <i class="fas fa-chalkboard-teacher"></i> Review slides and links in them
 
 The schedule is currently work in progress.
 

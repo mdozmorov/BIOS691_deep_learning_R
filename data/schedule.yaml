@@ -2,31 +2,31 @@ lessons:
   - title: '<span class="fake-header-table">Introduction to Deep Learning with R</span>'
     header: True
 
-  - title: '**Lecture 1**'
+  - title: '**Day 1: Fundamentals of Deep Learning I**'
     date: "June 8"
     reading: "01-reading"
     assignment: "01-problem-set"
     class: "01-class"
 
-  - title: '**Lecture 2**'
+  - title: '**Day 2: Fundamentals of Deep Learning I**'
     date: "June 9"
 #    reading: "02-reading"
 #    assignment: "02-problem-set"
 #    class: "02-class"
 
-  - title: '**Lecture 3**'
+  - title: '**Day 3: Overfitting, working with text**'
     date: "June 10"
 #    reading: "03-reading"
 #    assignment: "03-problem-set"
 #    class: "03-class"
 
-  - title: '**Lecture 4**'
+  - title: '**Day 4: Convolutional Neural Networks, working with images**'
     date: "June 11"
 #    reading: "04-reading"
 #    assignment: "04-problem-set"
 #    class: "04-class"
 
-  - title: "**Lecture 5**"
+  - title: "**Day 5: Autoencoders, Recurrent Neural Networks, LSTMs, sequence learning**"
     date: "June 12"
 #    reading: "05-reading"
 #    assignment: "05-problem-set"
