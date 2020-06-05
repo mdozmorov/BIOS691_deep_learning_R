@@ -22,6 +22,7 @@ editor_options:
 
 - Teams of two are encouraged
 - Due date is 07/12/2020
+- Ask questions by e-mail
 
 ## Data
 
@@ -40,7 +41,7 @@ editor_options:
 - Create your code in RMarkdown
 - Describe and implement data download and processing
 - Select, justify, and implement a network architecture suitable for the data
-- Train and evaluate performance of the network
+- Train and evaluate the performance of the network
 - Tweak network architecture, if needed, to improve model performance
 - Explain all steps, describe the achieved performance
 
@@ -50,6 +51,6 @@ Many Kaggle competitions allow for late submissions in the form of text files wi
 
 - Register on [GitHub](https://github.com/). Learn about GitHub in the section [4 - Git and GitHub](https://mdozmorov.github.io/BIOS691.2018/syllabus/) of the [Reproducible research tools](https://mdozmorov.github.io/BIOS691.2018/)
 - Create a repository with your code solving the selected competition
-    - Your code should run (knit) with mimimal modifications, e.g., adjusting path
+    - Your code should run (knit) with minimal modifications, e.g., adjusting path
     - If teamwork, ensure that both participants committed to the repository
     

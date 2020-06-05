@@ -1,8 +1,8 @@
 ---
 title: "Lecture 1"
 # linktitle: "1. Introduction to RStudio and Images"
-date: "2020-04-12"
-class_date: "2020-04-12"
+date: "2020-06-08"
+class_date: "2020-06-08"
 output:
   blogdown::html_page:
     toc: false
@@ -22,11 +22,11 @@ editor_options:
 
 ### Class Introduction
 
-<a href="https://bios691-deep-learning-r.netlify.app/slides/00-Introduction.html#1" target="_blank">Lecture slides in HTML format</a>
+<a href="../../slides/00_Introduction.html#1" target="_blank">Lecture slides in HTML format</a>
 
-<a href="https://bios691-deep-learning-r.netlify.app/slides/00-Introduction.pdf" target="_blank">Lecture handouts in PDF format</a>
+<a href="../../slides/00_Introduction.pdf" target="_blank">Lecture handouts in PDF format</a>
 
 ```{r echo=FALSE}
-knitr::include_url('https://bios691-deep-learning-r.netlify.app/slides/00-Introduction.html#1')
+knitr::include_url('../../slides/00_Introduction.html#1')
 ```
 

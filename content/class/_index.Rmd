@@ -8,4 +8,4 @@ type: docs
 weight: 1
 ---
 
-Class-specific material for each class will be posted following each class session on the day of class.
+Class-specific material will be posted following each class session

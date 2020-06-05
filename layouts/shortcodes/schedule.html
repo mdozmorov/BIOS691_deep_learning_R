@@ -9,14 +9,12 @@
 
             {{- if .header }}
 
-            <!--
             <td style="width:10%;text-align:center" class="mid-table-header">Reading</td>
             <td style="width:10%;text-align:center" class="mid-table-header">Assignment</td>
-            -->
-            <td style="width:10%;text-align:center" class="mid-table-header">Course material</td>
+            <td style="width:10%;text-align:center" class="mid-table-header">Class</td>
 
             {{- else }}
-<!--
+
             {{- if .reading }}
             <td align="center" style="width:10%;text-align:center"><a
                     href="{{ .Site.baseurl }}/reading/{{ .reading }}/">
@@ -39,7 +37,6 @@
             </td>
             {{- end }}
 
--->
             {{- if .class }}
             <td align="center" style="width:10%;text-align:center"><a href="{{ .Site.baseurl }}/class/{{ .class }}/">
                     <i class="fas fa-chalkboard-teacher fa-lg"></i></a></td>

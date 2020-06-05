@@ -5,18 +5,18 @@ main:
   - name: Schedule
     url: /schedule/
     weight: 2
-  - name: Course material
-    url: /class/
+  - name: Readings
+    url: /reading/
     weight: 3
-  - name: References
-    url: /reference/
+  - name: Assignments
+    url: /assignment/
     weight: 4
-#  - name: Assignments
-#    url: /assignment/
-#    weight: 5
-#  - name: RStudio.cloud
-#    url: https://rstudio.cloud/
-#    weight: 7
+  - name: Classes
+    url: /class/
+    weight: 5
+#   - name: RStudio.cloud
+#     url: https://rstudio.cloud/
+#     weight: 7
 assignment:
   - name: Assignments
     weight: 1

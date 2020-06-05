@@ -1,6 +1,6 @@
 ---
-title: "Problem set 1"
-date: "2020-03-27"
+title: "Code 1"
+date: "2020-06-08"
 due_date: "2020-04-09"
 due_time: "11:59 PM"
 menu:
@@ -17,11 +17,3 @@ editor_options:
 ---
 
 # Instructions
-
-Please finish the assignment in the notebook and submit in the Submissions tab in Sakai.
-
-# Rubric (10 points)
-
-1. Did the student load the images? (3 points)
-2. Did the Student generate histograms? (2 points)
-3. Did the student comment on the histograms and the images? (5 points)

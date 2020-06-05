@@ -4,26 +4,33 @@ lessons:
 
   - title: '**Lecture 1**'
     date: "June 8"
-    # reading: "01-reading"
+    reading: "01-reading"
+    assignment: "01-problem-set"
     class: "01-class"
 
   - title: '**Lecture 2**'
     date: "June 9"
-    # assignment: "01-problem-set"
-    class: "02-class"
+#    reading: "02-reading"
+#    assignment: "02-problem-set"
+#    class: "02-class"
 
   - title: '**Lecture 3**'
     date: "June 10"
-    # reading: "02-reading"
-    class: "03-class"
+#    reading: "03-reading"
+#    assignment: "03-problem-set"
+#    class: "03-class"
 
   - title: '**Lecture 4**'
     date: "June 11"
-    class: "04-class"
+#    reading: "04-reading"
+#    assignment: "04-problem-set"
+#    class: "04-class"
 
   - title: "**Lecture 5**"
     date: "June 12"
-    class: "05-class"
+#    reading: "05-reading"
+#    assignment: "05-problem-set"
+#    class: "05-class"
 
 #  - title: "**Notebook 2 due**"
 #    date: "April 16"
