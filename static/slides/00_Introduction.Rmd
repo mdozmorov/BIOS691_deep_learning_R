@@ -1,0 +1,36 @@
+---
+title: "Deep Learning with R"
+subtitle: "Introduction"
+author: "Mikhail Dozmorov"
+institute: "Virginia Commonwealth University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["xaringan-themer.css", "xaringan-my.css"]
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r xaringan-themer, include = FALSE}
+library(xaringanthemer)
+mono_light(
+  base_color = "midnightblue",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "500", "500i"),
+  code_font_google   = google_font("Droid Mono"),
+  link_color = "deepskyblue1",
+  text_font_size = "28px"
+)
+```
+
+### Artificial Intelligence Podcast
+
+.center[
+<a href="https://www.youtube.com/user/lexfridman/featured"> <img src="img/Lex_Fridman_Youtube.png" height=450> </a>
+]
+
+.small[https://www.youtube.com/user/lexfridman/featured]
