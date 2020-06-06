@@ -44,7 +44,7 @@ This course is an introduction to deep learning theory and practice. It will cov
     - Optional: Docker for [**Windows**](https://hub.docker.com/editions/community/docker-ce-desktop-windows/) or [**Mac**](https://hub.docker.com/editions/community/docker-ce-desktop-mac/) is recommended
     - Windows only: [**Git Bash**](https://git-for-windows.github.io/) or [**Cygwin**](http://www.cygwin.com/)
     - Windows only: [**Rtools**](https://cran.r-project.org/bin/windows/Rtools/)
-    - [**Windows-specific instructions on installing Keras and TensorFlow**](tensorflow.html)
+    <!-- - [**Windows-specific instructions on installing Keras and TensorFlow**](tensorflow.html) -->
 
 ## Learning Objectives
 
