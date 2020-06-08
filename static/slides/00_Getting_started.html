@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Deep Learning with R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Mikhail Dozmorov" />
+    <meta name="date" content="2020-06-08" />
+    <script src="libs/header-attrs-2.1/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="xaringan-my.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Deep Learning with R
+## Getting started
+### Mikhail Dozmorov
+### Virginia Commonwealth University
+### 2020-06-08
+
+---
+
+
+
+
+# Welcome: Class format
+
+Course web site: https://bios691-deep-learning-r.netlify.app/
+
+- [Lecture](../class/)
+- [Live Coding](../assignment/)
+- [Q&amp;A Google Doc](https://docs.google.com/document/d/1J6KF6Ok50QfOD3tS39yWqxdvLcFjdWHP78QiVjkrdRw/edit?usp=sharing), https://bit.ly/bios691  
+
+You will get the most out of this class if you   
+1. Attend class
+2. Follow and complete code examples yourself
+3. Review references and reading
+4. Ask questions
+
+[Student Course evaluation](https://courseeval.vcu.edu/Blue/svg.aspx?pid=05df79ed-c934-48ae-aa39-72d70fdfd940&amp;sid=62affb957f6d70bbd79f9c2865d00a8bf1e232837e630381dc1095289ecfcd37&amp;tid=f796bf54e5287c0376fde9485d74a0d8&amp;uid=e9c5910f23ceae63a3abaa9bc1f1b34b96eebb7ae0b9c163efc27fccff992a1d&amp;regl=en-us), or [Guest Course evaluation](https://docs.google.com/forms/d/1aiSdoZoDKki6N5J0bvjI7duG-WAG7C1Oq-X4WoKyDTs/prefill) - please evaluate the course Friday afternoon, June 12, 2020. All evaluations are anonymous
+
+---
+# Welcome: Textbook
+
+Course web site: https://bios691-deep-learning-r.netlify.app/
+
+.pull-left[Book: **"Deep Learning with R"** introduces the world of deep learning using the powerful Keras library and its R language interface
+
+The book builds your understanding of deep learning through intuitive explanations and practical examples]
+
+.pull-right[ &lt;img src="img/R_book.png" height=400&gt; ]
+
+.small[https://www.manning.com/books/deep-learning-with-r]  
+
+---
+## Welcome: Textbook
+
+.pull-left[&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/Bo8MY4JpiXE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;]
+
+.pull-right[&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/YrzE_N4bjDM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;]
+
+Authors: François Chollet (the creator of Keras) with J. J. Allaire (the founder of RStudio and the author of the R interfaces to Keras and TensorFlow)
+
+.small[https://github.com/jjallaire/deep-learning-with-r-notebooks] 
+
+---
+## Additional resources
+
+- [The Deep Learning textbook](https://www.deeplearningbook.org/) by Ian Goodfellow, Yoshua Bengio and Aaron Courville
+
+- [Deep Learning with Keras and TensorFlow in R Workflow](https://github.com/rstudio-conf-2020/dl-keras-tf) - RStudio Conference 2020 workshop by Brad Boehmke
+
+- [MIT Introduction to Deep Learning | 6.S191](https://www.youtube.com/watch?v=njKP3FqW3Sk&amp;list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI) - MIT video course by Alexander Amini, Ava Soleimani, and guests. Dense and informative ~45min lectures covering various topics of deep learning. [introtodeeplearning.com](http://introtodeeplearning.com/) - course web site with slides, video, and other material
+
+- [Machine learning and deep learning resources](https://github.com/mdozmorov/MachineLearning_notes) - a collection of references for further studies
+
+---
+## Final project
+
+The objectives of this class include  
+- Become proficient in selecting the correct types of deep learning models
+- Implement deep neural networks using Keras/TensorFlow and R programming language
+- Train and evaluate the performance of deep neural networks
+
+To help you with this, you will solve one of the [Kaggle competitions](https://www.kaggle.com/competitions) based on topics/code learned in-class. See [Final project](../class/final_project) for more details
+
+- Teams of two are encouraged
+- Due date is 07/12/2020
+- Ask questions by e-mail
+
+.small[https://www.kaggle.com/competitions]
+
+---
+## Artificial Intelligence and Deep Learning
+
+- **Artificial Intelligence** - A process of machines learning to perform tasks, rather than simply carrying out computations that are input by human users
+- **Machine Learning** - An approach to AI in which a computer algorithm (a set of rules and procedures) is developed to analyze and make predictions from data that is fed into the system
+- **Neural Networks** - A machine learning approach modeled after the brain in which algorithms process signals via interconnected nodes called artificial neurons
+- **Deep Learning** - A form of machine learning that uses many layers of computation to form what is described as a deep neural network, capable of learning from large amounts of complex, unstructured data
+
+.small[https://www.nibib.nih.gov/science-education/science-topics/artificial-intelligence-ai]
+
+---
+## Artificial Intelligence and Deep Learning
+
+.center[&lt;img src="img/AI_DeepLearning.jpg" height=450&gt;]
+
+.small[https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/chapter1.html]
+
+---
+## Machine vs. Deep Learning
+
+- **Feature engineering** - transforming input data so it is amenable for classification. Automated by Deep Learning
+- **Feature selection** - selecting features most important for accurate classification
+
+.center[&lt;img src="img/ML_vs_DL.jpeg" height=300&gt;]
+
+.small[https://www.analyticsvidhya.com/blog/2020/02/cnn-vs-rnn-vs-mlp-analyzing-3-types-of-neural-networks-in-deep-learning/]
+
+---
+## Machine vs. Deep Learning
+
+.center[&lt;img src="img/cnn_evolution.png" height=350&gt;]
+
+.small[https://towardsdatascience.com/review-senet-squeeze-and-excitation-network-winner-of-ilsvrc-2017-image-classification-a887b98b2883]
+
+---
+## Deep learning history
+
+.center[&lt;img src="img/HistoryAI.png" height=450&gt;]
+
+.small[https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/chapter1.html]
+
+---
+## Deep learning applications
+
+- Computer vision, image classification, image captioning
+
+- Speech recognition, translation
+
+- Text, natural-language processing, sentiment analysis
+
+- Timeseries forecasting
+
+- Image, text, speech/music generation, music-to-notes translation
+
+- Self-driving cars
+
+.small[http://detexify.kirelabs.org/classify.html]
+
+---
+## Essential Knowledge for Deep Learning
+
+- Probability and Statistics
+
+- Linear Algebra and Calculus
+
+- Key Machine Learning Concepts
+
+- Hardware (GPU preferred)
+
+- Software (Keras preferred)
+
+- Programming (Linux-based OS preferred, Python preferred)
+
+.small[https://www.analyticsvidhya.com/blog/2020/03/deep-learning-5-things-to-know/]
+
+---
+## Probability and Statistics for Deep Learning
+
+- **Descriptive Statistics** - Standard Deviation, Variance, Normal distribution, Central Limit Theorem
+
+- **Probability** - random variables, binomial distribution, Z-scores, significance level
+
+- **Linear models** - easily interpretable machine learning
+
+---
+## Linear Algebra for Deep Learning
+
+- **Scalars** and **vectors**
+    - **Dot product** - the Dot product of two vectors returns a scalar value
+    - **Cross product** - the Cross product of two vectors returns another vector which is orthogonal (right-angled) to both
+
+- **Matrices** and **Matrix Operations**
+    - **Scalar Multiplication** - multiply all matrix elements with the scalar
+    - **Matrix Multiplication** - multiplying two matrices means calculating the dot product of the rows and columns and creating a new matrix with dimensions derived from the two input matrices
+    - **Hadamard product** - element-wise product of the two vectors ( `\(\bigodot\)` )
+    - **Transpose of the matrix** - swap the rows and the columns in a matrix
+    - **Inverse to the matrix** - an inverse of a matrix multiplied with the matrix gives an identity matrix
+
+---
+## Tensors
+
+Tensors are a generalization of vectors and matrices to an arbitrary number of dimensions
+
+- A tensor that contains only one number is called a scalar (or scalar-tensor, or zero-dimensional tensor, or 0D tensor)
+
+- A one-dimensional array of numbers is called a vector, or 1D tensor
+
+- A two-dimensional array of numbers is a matrix, or 2D tensor
+
+- An array of matrices makes a three-dimensional array of numbers, or 3D tensor
+
+---
+## Tensors
+
+A tensor is defined by three key attributes:
+
+- **Number of axes (rank)** - For instance, a 3D tensor has three axes, and a matrix has two axes
+
+- **Shape** - This is an integer vector that describes how many dimensions the tensor has along each axis. A vector has a shape with a single element, such as (5). Think `dim()` function.
+
+- **Data type** - This is the type of the data contained in the tensor; integer or double
+
+---
+## Real-world tensors
+
+- **Vector data** - 2D tensors of shape (samples, features)
+
+- **Timeseries data or sequence data** - 3D tensors of shape (samples, timesteps, features)
+
+- **Images** - 4D tensors of shape (samples, height, width, channels)
+
+- **Video** - 5D tensors of shape (samples, frames, height, width, channels)
+
+---
+## Tensor operations
+
+.pull-left[
+- Addition, multiplication
+- Tensor transformation with functions
+- Tensor reshaping
+- Tensor dot&lt;sup&gt;1&lt;/sup&gt;
+]
+
+.pull-right[&lt;img src="img/tensordor.png" height=400&gt;]
+
+.footnote[review Section "2.3.3 Tensor dot", p. 36]
+
+---
+## Calculus for Deep Learning
+
+- **Derivatives** - derivatives measure the change in the output value when we change the input value
+- **Partial derivatives** - Partial derivative is when we consider only one variable, keep all the other variables as constant, and take the derivative with respect to the considered variable
+- **Chain rule** - helps when input variables are expressed as functions of other functions. If `\(y = f(u)\)` and `\(u=g(x)\)` are both differentiable, then `\(\frac{dy}{dx}=\frac{dy}{du}\frac{du}{dx}\)`
+- **Gradient** - the gradient of the function `\(f(x)\)` with respect to `\(x\)` (an `\(n\)`-dimensional vector `\([x_,x_2,...,x_n]^T\)`) is a vector of `\(n\)` partial derivatives `\(\nabla_x f(x) = \left[\frac{\partial f(x)}{\partial x_1}, \frac{\partial f(x)}{\partial x_2},...,\frac{\partial f(x)}{\partial x_n} \right]^T\)`
+
+.small[https://d2l.ai/chapter_preliminaries/calculus.html]
+
+---
+## Supervised Learning
+
+- **Supervised Learning** - using training data (input variables) with the known target variable, find rules that give the relationship between the input and the target variables. These rules can then be applied to the unseen (test) data to predict the expected target variables for it. Examples: kNN, SVM, Linear Regression, etc.
+    - **Regression** - predict numeric (continuous) outcome
+    - **Classification** - predict continuous (binary or multinomial) outcome
+
+- **Applications** - Text categorization, Face Detection, Signature recognition, Customer recommendation system, Spam detection, Weather forecasting, Predicting housing prices based on the prevailing market price, Stock price predictions, among others
+
+.small[https://www.analyticsvidhya.com/blog/2020/04/supervised-learning-unsupervised-learning/]
+
+---
+## Unsupervised Learning
+
+- **Unsupervised Learning** - the target variable is unknown, so the goal is to cluster the data into groups, and we can identify the groups after we have clustered the data. Examples of unsupervised learning include k-means clustering, dimensionality reduction techniques, etc.
+    - **Clustering** - organize unlabelled data into _similar_ groups
+    - **Anomaly detection** - identify rare events
+
+- **Applications** - Fraud detection, Malware detection, Identification of human errors during data entry, Conducting accurate basket analysis, etc.
+
+.small[https://www.analyticsvidhya.com/blog/2020/04/supervised-learning-unsupervised-learning/]
+
+---
+## Semi-supervised learning
+
+- Learning guided by the data itself
+
+- Labels generated from the input data
+
+- **Autoencoders** - learns data properties (labels) to reconstruct input data
+
+- The distinction from other learning types is not well-defined
+
+---
+## Reinforcement Learning
+
+- **Reinforcement Learning** - learning to make specific decisions based on past experience. An agent interacts with an environment over time, receives feedback as reward or punishment, and adjusts its action policy to maximize the reward for the next action.
+    - 2015: Google's Deep Q algorithm wins Atari games
+    - 2015: Google's AlphaGo algorithm beats best human Go players
+
+.center[&lt;img src="img/RL_image.jpeg" height=200&gt;]
+
+.small[https://www.wired.com/2015/02/google-ai-plays-atari-like-pros/
+
+https://www.wired.com/2017/05/googles-alphago-trounces-humans-also-gives-boost/
+
+https://github.com/p-christ/Deep-Reinforcement-Learning-Algorithms-with-PyTorch]
+
+---
+## Reinforcement Learning
+
+.center[&lt;img src="img/RL_success.png" height=450&gt;]
+
+.small[https://simons.berkeley.edu/sites/default/files/docs/6453/201703xxsimons-representations-deep-rl.pdf]
+
+---
+## Transfer learning
+
+- Train a large model on a huge dataset, and then use the final parameters on smaller datasets
+
+- Pretrained models significantly simplify and reduce time of training
+
+- Popular in computer vision ( [VGG-16](https://neurohive.io/en/popular-networks/vgg16/), [ResNet](https://towardsdatascience.com/an-overview-of-resnet-and-its-variants-5281e2f56035) ), NLP ([GPT-2](https://openai.com/blog/better-language-models/), [BERT](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270))
+
+---
+
+.center[&lt;img src="img/all_learning.png" height=500&gt;]
+
+.small[https://medium.com/tensorflow/mit-deep-learning-basics-introduction-and-overview-with-tensorflow-355bcd26baf0]
+
+---
+## Data preprocessing
+
+- **Vectorization** - sample-specific data should be represented as a vector. The vector representation scheme should be consistent from sample to sample
+
+- **Normalization** - Make values small, typically within the 0-1 range. Make them homogeneous, relatively uniformly distributed throughout the range
+    - In general, it isn’t safe to feed into a neural network data that takes relatively large values or data that are on different scales. Doing so can trigger large gradient updates that will prevent the network from converging
+    - Normalize **features** to have a mean of 0 and a standard deviation of 1
+    - Important: Normalize training data separately, then use these normalization constants to normalize validation and test sets
+
+---
+## Training-test-validation sets
+
+- **Training set** - data used to develop feature sets, train our algorithms, tune hyperparameters, compare models, and all of the other activities required to choose a final model
+- **Test set** - data used to estimate the final model’s performance
+- 70%/30% split is typical to separate the initial dataset into training and test sets
+
+.center[&lt;img src="img/overunderfitting.png" height=300&gt;]
+
+---
+## Training-test-validation sets
+
+- During training, some data leakage occurs - the model memorizes some properties of the test set that improve performance. Leads to overfitting
+- **Validation** - data used to improve the model. Needed to evaluate the model on never-before-seen data, to make the model generalizable and prevent overfitting
+- 60%/20%/20% is typical to split the data into three sets
+
+.center[&lt;img src="img/overunderfitting.png" height=300&gt;]
+
+---
+## Training-test-validation sets
+
+.center[&lt;img src="img/overunderfitting1.png" height=300&gt;]
+
+.small[ [Angermueller et al., “Deep Learning for Computational Biology.”](https://www.embopress.org/doi/10.15252/msb.20156651) ]
+
+---
+## Cross-validation
+
+- **Cross-validation** - A common machine learning strategy wherein the dataset is split multiple times into training and validation sets. The average validation performance across the multiple splits is used to select the final model
+
+- k-fold cross-validation, leave-one-out cross-validation, bootstrapping
+
+.center[&lt;img src="img/cv.png" height=300&gt;]
+
+.small[https://bradleyboehmke.github.io/HOML/process.html]
+
+---
+## Bias variance trade-off
+
+- **Bias** - the difference between the expected (or average) prediction of our model and the correct value which we are trying to predict
+- **Variance** - the variability of a model prediction for a given data point
+
+.center[&lt;img src="img/bullseye.png" height=350&gt;]
+
+.small[http://scott.fortmann-roe.com/docs/BiasVariance.html]
+
+---
+## Bias variance trade-off
+
+- **Bias** - the difference between the expected (or average) prediction of our model and the correct value which we are trying to predict
+- **Variance** - the variability of a model prediction for a given data point
+
+.center[&lt;img src="img/biasvariance.png" height=350&gt;]
+
+.small[http://scott.fortmann-roe.com/docs/BiasVariance.html]
+
+---
+## Underfitting and Overfitting
+
+- **Underfitting and Overfitting** - too simple or too complex models
+
+.center[&lt;img src="img/fitting.png" height=350&gt;]
+
+.small[https://medium.com/greyatom/what-is-underfitting-and-overfitting-in-machine-learning-and-how-to-deal-with-it-6803a989c76]
+
+---
+## Architectures
+
+- Deep Learning methods comprise a wide variety of architectures. The most popular ones are 
+    - Multilayer Perceptron (MLP), fully connected networks
+    - Convolutional Neural Networks (CNN)
+    - Recurrent Neural Network (RNN), Long Short-Term Memory (LSTM), Gated Recurrent Units (GRU)
+    - Generative Adversarial Networks (GAN), (Variational) Autoencoders (VAE)
+
+.small[https://www.analyticsvidhya.com/blog/2020/02/cnn-vs-rnn-vs-mlp-analyzing-3-types-of-neural-networks-in-deep-learning/]
+
+---
+## Hardware
+
+- **GPU**, Graphics Processing Unit - highly parallel computations, speeds up network training
+    - NVIDIA K80, P4, P100 - starter GPUs, on the order of increased performance
+    - NVIDIA GTX1060 and above - intermediate GPUs
+    - NVIDIA V100 - advanced GPU, up to 47X speedup compared with CPU
+
+- **TPU**, Tensor Processing Unit - designed for parallel tensor computations, faster and cheaper than GPUs
+
+.small[https://towardsdatascience.com/maximize-your-gpu-dollars-a9133f4e546a]
+
+---
+## Software
+
+- **TensorFlow** - the most popular framework, developed by Google. Has an R interface
+
+- **Keras** - the front-end API to the most popular frameworks (Tensorflow, Theano, others). Much less and simpler code. Starting point for beginners
+
+- **PyTorch** - the distinct framework, highly customizable, gaining popularity
+
+- **FastAI** - founded by Jeremy Howard, the former President and Chief Scientist at Kaggle. PyTorch-based well-tuned components for best performance. Free online courses
+
+.small[https://tensorflow.rstudio.com/, https://keras.rstudio.com/
+
+https://tensorflow.rstudio.com/installation/gpu/local_gpu/
+
+https://www.analyticsvidhya.com/blog/2020/03/tensorflow-2-tutorial-deep-learning/]
+
+---
+## Software
+
+.center[&lt;img src="img/frameworks.png" height=450&gt;]
+
+.small[https://towardsdatascience.com/deep-learning-framework-power-scores-2018-23607ddf297a]
+
+---
+## Providers
+
+- **[Google Colab](https://colab.research.google.com/)** - free Jupyter notebooks, integrated with GitHub and Google Drive, provides free entry-level GPU and TPU
+
+- **[Google Cloud](https://cloud.google.com/products/ai/)** - powerful cloud computing, paid, easy to navigate interface and price plans. Preemptible (short-lived but affordable) virtual machines
+
+- **[AWS EC2](https://aws.amazon.com/ec2/)** - popular cloud computing platform, requires understanding of pricing options. $300 credit for starters
+
+- **[Kaggle](https://www.kaggle.com/)** - free Jupyter notebooks, with GPUs. Lots of community code
+
+- Other options: **Paperspace**, **vast.ai**, **Microsoft Azure**
+
+.small[https://www.analyticsvidhya.com/blog/2020/03/google-colab-machine-learning-deep-learning/
+
+https://towardsdatascience.com/maximize-your-gpu-dollars-a9133f4e546a]
+
+---
+## How to think about deep learning
+
+- The most surprising thing about deep learning is how simple it is
+
+- All you need is sufficiently large parametric models trained with gradient descent on sufficiently many examples
+
+- Each layer in a deep-learning model operates one simple geometric transformation on the data that goes through it
+
+- A key characteristic of this geometric transformation is that it must be differentiable, which is required in order for us to be able to learn its parameters via gradient descent. Intuitively, this means the geometric morphing from inputs to outputs must be smooth and continuous
+
+- As Richard Feynman once said about the universe, "It’s not complicated, it’s just a lot of it"
+
+.small[Chapter 9.1.3]
+
+---
+## Leaders of Deep Learning
+
+.center[&lt;img src="img/SomeGuysMachineLearning.png" height=400&gt;]
+
+.small[
+- [Heroes of Deep Learning, Interviews](https://www.youtube.com/playlist?list=PLfsVAYSMwsksjfpy8P2t_I52mugGeA5gR) by Andrew Ng
+
+https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/deep_learning.html]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
