@@ -1,0 +1,21 @@
+---
+title: "Day 1: Fundamentals of Deep Learning I"
+# linktitle: "1: Introduction to R/RStudio and Images"
+date: "2020-06-08"
+read_date: "2020-06-08"
+menu:
+  reading:
+    parent: Readings
+    weight: 1
+type: docs
+---
+
+- [Machine Learning for Beginners: An Introduction to Neural Networks](https://victorzhou.com/blog/intro-to-neural-networks/) - A simple explanation of how they work and how to implement one from scratch in Python
+- [The Matrix Calculus You Need For Deep Learning](http://parrt.cs.usfca.edu/doc/matrix-calculus/index.html) paper by Terence Parr and Jeremy Howard
+- [Artificial Intelligence book: Linear Algebra](https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/linear_algebra.html) - basics of linear algebra
+- [Dive into Deep Learning book: 3-Gradient.pdf](https://github.com/d2l-ai/berkeley-stat-157/tree/master/slides/1_29) - Gradient and Auto Differentiation
+- [MIT Introduction to Deep Learning | 6.S191](https://youtu.be/njKP3FqW3Sk) - Main concepts of deep learning, gradient descent, backpropagation
+- Series of eight video lectures on the math of machine learning by Tinnam Ganesh. "Elements of Neural Networks & Deep Learning", [Part1,2,3](https://gigadom.in/2019/01/10/my-presentations-on-elements-of-neural-networks-deep-learning-part123/) - Details of gradient descent, backpropagation
+- Read on forward and back propagation algorithm, step-by-step guide, https://www.analyticsvidhya.com/blog/2017/05/neural-network-from-scratch-in-python-and-r/, implement and understand the R code of the algorithm
+- [Paper: Angermueller et al., “Deep Learning for Computational Biology.”](https://doi.org/10.15252/msb.20156651) - Review on machine learning, (epi)genomics examples. Supervised vs. unsupervised learning. Deep neural networks. Box 1 - network basics. Box 2 - convolutional NN. TOOLS: Caffe, Theano, Torch7, TensorFlow. Data preparation, model training and optimization
+- [Paper: Pérez-Enciso, and Zingaretti. “A Guide for Using Deep Learning for Complex Trait Genomic Prediction.” Genes, 2019](https://doi.org/10.3390/genes10070553) - Deep learning for predicting phenotypes from genomics data. Deep learning basics, definitions
