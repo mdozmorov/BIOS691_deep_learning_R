@@ -1,0 +1,21 @@
+---
+title: "Day 2: Fundamentals of Deep Learning II"
+# linktitle: "1: Introduction to R/RStudio and Images"
+date: "2020-06-09"
+read_date: "2020-06-09"
+menu:
+  reading:
+    parent: Readings
+    weight: 2
+type: docs
+---
+
+- [MIT Deep Learning Basics: Introduction and Overview with TensorFlow](https://medium.com/tensorflow/mit-deep-learning-basics-introduction-and-overview-with-tensorflow-355bcd26baf0) - a blog post with infografics and brief description of each type of neural network, links to Lex Fridman's video lectures
+- [Dive into Deep Learning book: 4-Linear-Methods.pdf](https://github.com/d2l-ai/berkeley-stat-157/tree/master/slides/1_31) - Linear regression and gradient descent
+- [Deep Learning book: 4 Numerical Computation](https://www.deeplearningbook.org/contents/numerical.html) - Gradiend descent, optimization. Full [Part I: Applied Math and Machine Learning Basics](https://www.deeplearningbook.org/) is recommended
+- [Neural Networks and Deep Learning book: Chapter 2](http://neuralnetworksanddeeplearning.com/chap2.html) - details the math of backpropagation
+- Zou, James, Mikael Huss, Abubakar Abid, Pejman Mohammadi, Ali Torkamani, and Amalio Telenti. “[A Primer on Deep Learning in Genomics](https://doi.org/10.1038/s41588-018-0295-5).” Nature Genetics, 2018 - Deep learning in genomics overview (feed-forward, convolutional, recurrent) and a Python tutorial on detecting DNA motifs. Box 1 and 2 - concepts and definitions. Box 3 - online resources (cloud platforms, GPU services, software libraries, educational resources, more). https://github.com/abidlabs/deep-learning-genomics-primer
+- Topol, Eric J. “[High-Performance Medicine: The Convergence of Human and Artificial Intelligence](https://doi.org/10.1038/s41591-018-0300-7).” Nature Medicine, 2019 - AI and deep learning examples in medicine. Publications comparing AI with doctors, FDA-approved AI algorithms. Pathology (cancer, dermatology, ophtalmology, gastroenterology, mental health). Benefits and biases
+
+- [How Backpropagation Works](https://www.youtube.com/watch?v=6BMwisTZFr4) - 18min video by Brandon Rohrer explaining backpropagation using shower heads
+- [An overview of gradient descent optimization algorithms](https://ruder.io/optimizing-gradient-descent/) by Sebastian Ruder. Details and math of individual algorithms

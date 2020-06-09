@@ -1,0 +1,23 @@
+---
+title: "Code 2"
+date: "2020-06-09"
+due_date: "2020-06-09"
+due_time: "11:59 PM"
+menu:
+  assignment:
+    parent: Code
+    weight: 3
+type: docs
+weight: 1
+output:
+  blogdown::html_page:
+    toc: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# In-class, [deep-learning-with-r-notebooks](https://github.com/jjallaire/deep-learning-with-r-notebooks)
+
+- `3.4-classifying-movie-reviews.Rmd` - IMDB, one-hot encoding, feedforward DNN, validation concept
+- `3.5-classifying-newswires.Rmd` - Reuters, 46 classes, feedforward DNN
+- `3.6-predicting-house-prices.Rmd` - Boston housing price prediction, data normalization, cross-validation

@@ -1,0 +1,41 @@
+---
+title: "Day 2: Fundamentals of Deep Learning II"
+# linktitle: "1. Introduction to RStudio and Images"
+date: "2020-06-09"
+class_date: "2020-06-09"
+output:
+  blogdown::html_page:
+    toc: false
+menu:
+  class:
+    parent: Class sessions
+    weight: 2
+type: docs
+weight: 1
+# pdf: 
+# thumb: 
+editor_options: 
+  chunk_output_type: console
+---
+
+## Slides
+
+### Neural network fundamentals
+
+<a href="../../slides/01_Neural_network.html#1" target="_blank">Lecture slides in HTML format</a>
+
+<a href="../../slides/01_Neural_network.pdf" target="_blank">Lecture handouts in PDF format</a>
+
+```{r echo=FALSE}
+knitr::include_url('../../slides/01_Neural_network.html#1')
+```
+
+### Hello [Deep Learning] World
+
+Brad Boehmke's lecture for the [Deep Learning with Keras and TensorFlow in R Workflow](https://community.rstudio.com/t/deep-learning-with-keras-and-tensorflow-in-r-workflow-rstudio-conf-2020/49099)
+
+<a href="https://rstudio-conf-2020.github.io/dl-keras-tf/02-hello-dl-world.html#1" target="_blank">Lecture slides in HTML format</a>
+
+```{r echo=FALSE}
+knitr::include_url('https://rstudio-conf-2020.github.io/dl-keras-tf/02-hello-dl-world.html#1')
+```
