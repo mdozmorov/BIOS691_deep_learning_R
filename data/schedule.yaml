@@ -10,9 +10,9 @@ lessons:
 
   - title: '**Day 2: Fundamentals of Deep Learning II**'
     date: "June 9"
-#    reading: "02-reading"
-#    assignment: "02-problem-set"
-#    class: "02-class"
+    reading: "02-reading"
+    assignment: "02-problem-set"
+    class: "02-class"
 
   - title: '**Day 3: Overfitting, regularization, dropout, pretrained models, word embedding**'
     date: "June 10"
