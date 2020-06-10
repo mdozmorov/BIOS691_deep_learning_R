@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Deep Learning with R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Mikhail Dozmorov" />
+    <meta name="date" content="2020-06-10" />
+    <script src="libs/header-attrs-2.1/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="xaringan-my.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Deep Learning with R
+## Working with text
+### Mikhail Dozmorov
+### Virginia Commonwealth University
+### 2020-06-10
+
+---
+
+
+
+
+## Text processing
+
+Sequential data - best processed with RNNs, 1D CNNs
+
+- Document classification and time series classification, such as identifying the topic of an article or the author of a book
+- Timeseries comparisons, such as estimating how closely related two documents or two stock tickers are
+- Sequence-to-sequence learning, such as decoding an English sentence into French
+- Sentiment analysis, such as classifying the sentiment of tweets or movie reviews as positive or negative
+- Timeseries forecasting, such as predicting the future weather at a certain location, given recent weather data
+
+---
+## Text preparation
+
+- Vectorizing text is the process of transforming text into numeric tensors
+
+- Tokenization is breaking text into tokens (words, characters, or n-grams)
+    - One-hot encoding
+    - Word embedding
+
+- Vocabulary - the set of unique tokens in the corpus
+
+.small[https://www.analyticsvidhya.com/blog/2020/05/what-is-tokenization-nlp/]
+
+---
+## Word Tokenization
+
+- Word Tokenization is the most commonly used tokenization algorithm. It splits a piece of text into individual words based on a certain delimiter
+
+- Depending upon delimiters, different word-level tokens are formed
+
+- Typically the top K frequent words are used, and the rare words are replaced with a "UNK" token (placeholder for unknown)
+
+- Pretrained Word Embeddings such as Word2Vec and GloVe comes under word tokenization
+
+- Drawbacks - the vocabulary can become very large, the structure of individual words in not captured
+
+---
+## Character Tokenization
+
+- Character Tokenization splits apiece of text into a set of characters
+
+- Preserves the information of the word
+
+- Limits the size of the vocabulary
+
+- Drawbacks - the relationship between the characters to form meaningful words can be challenging to learn
+
+- A compromise is to use Subword Tokenization that splits the piece of text into subwords (or n-gram characters)
+
+.small[https://www.analyticsvidhya.com/blog/2020/05/what-is-tokenization-nlp/]
+
+---
+## One-hot encoding 
+
+.center[&lt;img src="img/one_hot_encoding.png" height=350&gt;]
+
+.small[https://www.kaggle.com/dansbecker/using-categorical-data-with-one-hot-encoding]
+
+---
+## Word embedding
+
+- Vectors obtained through one-hot encoding are binary, sparse (~99\% zeros), and very high-dimensional (same dimensionality as the number of words in the vocabulary, e.g., 20,000)
+
+- Word embeddings are low-dimensional floating-point vectors (that is, dense vectors, of `\(2^x\)` dimensions)
+
+- A word embedding is a learned representation for text where words with the same meaning have a similar representation
+
+---
+## Embedding layer - de novo learning
+
+- Embedding layer is a word embedding that is learned jointly with a neural network model on a specific natural language processing task, such as language modeling or document classification
+
+- Instead of simple but huge and sparse one-hot-encoding vectors, we can use an embedding matrix of lower dimensionality (30-50 dimensions)
+
+.small[https://www.tensorflow.org/tutorials/text/word_embeddings
+
+https://machinelearningmastery.com/what-are-word-embeddings/]
+
+---
+## Embedding layer - de novo learning
+
+- Initially, the weights for the embedding are randomly initialized. During training, they are gradually adjusted via backpropagation
+
+- Once trained, the learned word embeddings will roughly encode similarities between words (as they were learned for the specific problem your model is trained on). This word embedding structure can be used by the downstream model
+
+.small[https://www.tensorflow.org/tutorials/text/word_embeddings
+
+https://machinelearningmastery.com/what-are-word-embeddings/]
+
+---
+## Embedding layer
+
+The embedding matrix captures similarity among words in a multi-dimensional space. It can be visualized using dimensionality reduction techniques like t-SNE
+
+.center[&lt;img src="img/embedding.png" height=350&gt;]
+
+.small[https://towardsdatascience.com/deep-learning-4-embedding-layers-f9a02d55ac12]
+
+---
+## Word2Vec
+
+- Word2Vec is a statistical method for efficiently learning a standalone word embedding from a text corpus
+
+- It was developed by Tomas Mikolov, et al. at Google in 2013 as a response to make the neural-network-based training of the embedding more efficient, and since then has become the de facto standard for developing pre-trained word embedding
+
+- Word vectors formed so that if we do a dot product between two different vectors, the result will tell us how similar two words are
+
+- Such vectors capture the context of words (skip-gram and continuous bag of words methods)
+
+.small[https://code.google.com/archive/p/word2vec/]
+
+---
+## Word co-occurrence
+
+.center[&lt;img src="img/coocmat.png" height=350&gt;]
+
+Dimensionality can be reduced using SVD ( singular value decomposition). We then use the result of SVD as our word vectors
+
+.small[https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/natural-language-processing/word2vec.html]
+
+---
+## GloVe - reuse an embedding
+
+- Global Vectors for Word Representation (GloVe) is an unsupervised learning algorithm for obtaining vector representations for words
+- An extension to the Word2Vec method for efficiently learning word vectors, developed by Pennington, et al. at Stanford
+
+- Training is performed on aggregated global word-word co-occurrence statistics from a corpus, and the resulting representations showcase interesting linear substructures of the word vector space
+
+.small[https://nlp.stanford.edu/projects/glove/]
+
+---
+## GloVe - reuse an embedding
+
+- Instead of SVD, the goal is to minimize a new loss function between `\(u\)` and `\(v\)` word vectors
+
+`$$J(\Theta) = \frac{1}{2} \sum_{i,j=1}^W f(P_{ij})(u_i^Tv_j -logP_{i,j})^2$$`
+
+- The training objective of GloVe is to learn word vectors such that their dot product equals the logarithm of the words’ probability of co-occurrence
+
+.small[https://nlp.stanford.edu/projects/glove/]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

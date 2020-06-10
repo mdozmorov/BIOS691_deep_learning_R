@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Deep Learning with R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Mikhail Dozmorov" />
+    <meta name="date" content="2020-06-10" />
+    <script src="libs/header-attrs-2.1/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="xaringan-my.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Deep Learning with R
+## Managing overfitting
+### Mikhail Dozmorov
+### Virginia Commonwealth University
+### 2020-06-10
+
+---
+
+
+
+
+## Overfitting
+
+.center[&lt;img src="img/overfitting.png" height=250&gt;]
+
+- The performance of the model on the held-out validation data always peaks after a few epochs and then begins to degrade: the model quickly started to overfit to the training data
+- Overfit model is not generalizable - it simply memorizes training data, including noise
+- Get more data to avoid memorizing noise
+
+.small[https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/]
+
+---
+## Underfitting
+
+.center[&lt;img src="img/underfitting.png" height=250&gt;]
+
+- Until the performance on the held-out validation data did not peak, the model remains underfit
+- Less harmful than overfitting, but prevents to have the optimal model
+
+.small[https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/]
+
+---
+## Generalization and model capacity
+
+- Generalization is the ability to perform well on previously unobserved inputs
+
+- Initially, the model has low capacity, and training and generalization errors are both high (underfitting)
+
+.center[&lt;img src="img/model_capacity.png" height=250&gt;]
+
+.small[https://www.deeplearningbook.org/contents/ml.html]
+
+---
+## Generalization and model capacity
+
+- With training, capacity increases, but the gap between training and generalization error also increases
+
+- Eventually, the size of this gap outweighs the decrease in training error (overfitting)
+
+.center[&lt;img src="img/model_capacity.png" height=250&gt;]
+
+.small[https://www.deeplearningbook.org/contents/ml.html]
+
+---
+## Regularization
+
+- Regularization is a technique which makes slight modifications to the learning algorithm such that the model generalizes better
+
+- In machine learning, regularization penalizes the model's coefficients. In deep learning, it penalizes the weight matrices of the nodes
+
+- L1 and L2 are the most common types of regularization. These update the general cost function by adding another term known as the regularization term. _Cost function = Loss (say, binary cross-entropy) + Regularization term_
+
+---
+## L1 regulatization
+
+`$$Cost\ function = Loss + \frac{\lambda}{2m}*\sum \left\|w\right\|$$`
+
+- `\(\lambda\)` is the regularization parameter. It is the hyperparameter whose value is optimized for better results. 
+
+- The cost added is proportional to the absolute value of the weight coefficients (the L1 norm of the weights). L1 reduces some weights to zero
+
+---
+## L2 regularization
+
+`$$Cost\ function = Loss + \frac{\lambda}{2m}*\sum \left\|w\right\|^2$$`
+
+- L2 regularization is also known as weight decay as it forces the weights to decay towards zero (but not exactly zero). The cost added is proportional to the square of the weight coefficients (the L2 norm of the weights)
+
+- L2 is by far the most common and is known as ___weight decay___ in the context of neural nets
+
+.small[https://deeplizard.com/learn/video/iuJgyiS7BKM]
+
+---
+## Why regularization helps to prevent overfitting
+
+- Regularization helps to keep weights small
+
+- The behavior of the network with small weights won't change too much if we change a few random inputs
+
+- This makes the network robust against noisy changes, capturing instead patterns which are seen often across the training set
+
+- The unregularized network can use large weights to learn a complex model that carries a lot of information about the noise in the training data
+
+.small[http://neuralnetworksanddeeplearning.com/chap3.html]
+
+---
+## Dropout
+
+- Dropout was introduced as a regularization method to decrease overfitting in high capacity networks with many layers
+- Dropout simulates the _ensembling of many models_ by randomly disabling neurons with a probability `\(p\)` during each iteration, forcing the model to learn more robust features
+
+.center[&lt;img src="img/dropout.png" height=200&gt;]
+
+.small[ [Improving neural networks by preventing co-adaptation of feature detectors](https://arxiv.org/pdf/1207.0580.pdf) by Geoffrey Hinton, Nitish Srivastava, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov (2012) ]
+
+---
+## Dropout example
+
+- Drop 50% of randomly selected neurons
+- Run forward- and backpropagation through the modified network, update weights of the existing neurons
+- Repeat the process, this time dropping another 50% of randomly selected neurons, repeating the process, and update weights for the current set of neurons
+- Over several iterations, weights for all neurons will be learned
+- When we actually run the full network, that means that twice as many hidden neurons will be active. To compensate for that, we halve the weights outgoing from the hidden neurons
+
+.small[http://neuralnetworksanddeeplearning.com/chap3.html]
+
+.small[Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., &amp; Salakhutdinov, R. (2014). [Dropout: a simple way to prevent neural networks from overfitting](http://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf). The Journal of Machine Learning Research, 15(1), 1929–1958.]
+
+---
+## Data augmentation
+
+- Frequent operation in image data analysis
+- Goal - slightly transform images to generate unseen examples. The model will be forced to learn the general properties of objects, not random fluctuations
+- Common transformations: rotation, width/height shift, shear, zoom, flip, fill
+
+.center[&lt;img src="img/augmentation.png" height=200&gt;]
+
+.small[https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/]
+
+---
+## Early stopping
+
+- Early stopping is a kind of cross-validation strategy where we keep one part of the training set as the validation set
+- When we see that the performance on the validation set is getting worse, we immediately stop the training on the model
+
+.center[&lt;img src="img/overunderfitting.png" height=300&gt;]
+
+.small[https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/]
+
+---
+## Mini-batch training
+
+- Use a small random subset of the training set at each optimization step rather than the full training set
+    - Requires a constant amount of memory regardless of the data set size, which allows models to be trained on data sets much larger than the available memory
+    - The random fluctuations between batches were demonstrated to improve the model performance by regularization
+    
+---
+## Batch normalization
+
+- The technique that improves convergence of deep neural networks
+
+- Standardizes input features to each have a mean of zero and variance of one
+
+- Helps to combat overfitting
+
+- Implemented in `layer_batch_normalization()` layer type in Keras, used after a convolutional or densely connected layers
+
+- Frequently used in many network architectures (ResNet50, Inception V3, Xception)
+
+.small[https://d2l.ai/chapter_convolutional-modern/batch-norm.html]
+
+---
+## Batch normalization
+
+Batch normalization is applied to individual layers, after the affine transformation or convolution, and before the nonlinear activation function
+
+- In each training iteration, for each layer, we first compute its activations as usual
+- Then, we normalize the activations of each node by subtracting its mean and dividing by its standard deviation estimating both quantities based on the statistics of the current minibatch
+
+$$ BN(x) = \gamma \bigodot \frac{x - \hat{\mu}}{\hat{\sigma}} + \beta $$
+- `\(\gamma\)` - coordinate-wise scaling coefficient, `\(\beta\)` - offset
+
+.small[https://d2l.ai/chapter_convolutional-modern/batch-norm.html
+
+https://deeplizard.com/learn/video/dXB-KQYkzNU]
+
+---
+## Hyperparameter tuning
+
+- Numerous choices in selecting network architecture
+    - Number of layers, and their configuration (network topology)
+    - How many units or filters in each layer
+    - Which activation function(s) is the best for a given problem
+    - Should you use batch normalization/dropout, or other regularization techniques
+    - Which loss function to use
+    - How to choose a (constant or variable) learning rate
+
+---
+## Hyperparameters
+
+- **Hyperparameters** - parameters controlling the complexity of machine learning algorithms, to achieve a best bias-variance tradeoff
+    - **Grid search** - (systematically or random) search across many combinations of hyperparameters
+    - **Early stopping** - stop a grid search once the reduction in the error stops marginally improving
+    - Active research field
+
+.small[https://www.analyticsvidhya.com/blog/2020/03/beginners-guide-random-forest-hyperparameter-tuning/
+
+https://towardsdatascience.com/simple-guide-to-hyperparameter-tuning-in-neural-networks-3fe03dad8594]
+
+---
+## Ensemble deep learning
+
+- As in machine learning, ensembling the models is a powerful technique to obtain the best possible results
+
+- Pooling together the predictions from multiple models under the assumption that different good models trained independently are likely to capture various aspects of the data
+
+- Select the best performing and the most different models to build an ensemble, discard the rest
+
+- Ensembling is discouraged in publications as it inflates the performance
+
+---
+## Universal Deep Learning workflow
+
+- **Defining the problem and assembling a dataset**
+    - (Binary/multiclass/multilabel) classification? (Scalar/vector) regression?
+- **Choosing a measure of success**
+    - Accuracy? AUROC? Class imbalance?
+- **Deciding on an evaluation protocol**
+    - (Hold-out/k-fold) cross-validation?
+- **Preparing your data**
+    - Data as tensors, staled to small values ([-1, 1] or [0, 1] range)
+
+---
+## Universal Deep Learning workflow
+
+- **Developing a model that does better than a baseline**
+    - Activation function (last layer in particular), loss function, optimizer
+
+.center[&lt;img src="img/activation_last.png" height=180&gt;]
+
+- **Scaling up: developing a model that overfits**
+    - Add layers, neurons/units per layer, train for longer
+
+- **Regularizing your model and tuning your hyperparameters**
+    - Add dropout, L2/L1 regularization, tweak layers
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

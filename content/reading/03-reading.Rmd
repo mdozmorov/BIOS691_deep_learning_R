@@ -1,0 +1,16 @@
+---
+title: "Day 3: Overfitting, regularization, dropout, pretrained models, word embedding"
+# linktitle: "1: Introduction to R/RStudio and Images"
+date: "2020-06-10"
+read_date: "2020-06-10"
+menu:
+  reading:
+    parent: Readings
+    weight: 3
+type: docs
+---
+
+
+- [Deep learning with R: Chapter 4.4](https://www.manning.com/books/deep-learning-with-r) - Overfitting and underfitting
+- [Deep learning with R: Chapter 4.5](https://www.manning.com/books/deep-learning-with-r) - The universal Deep Learning workflow
+- [What Are Word Embeddings for Text?](https://machinelearningmastery.com/what-are-word-embeddings/)

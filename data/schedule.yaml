@@ -16,9 +16,9 @@ lessons:
 
   - title: '**Day 3: Overfitting, regularization, dropout, pretrained models, word embedding**'
     date: "June 10"
-#    reading: "03-reading"
-#    assignment: "03-problem-set"
-#    class: "03-class"
+    reading: "03-reading"
+    assignment: "03-problem-set"
+    class: "03-class"
 
   - title: '**Day 4: Convolutional Neural Networks, images**'
     date: "June 11"

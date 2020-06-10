@@ -1,0 +1,28 @@
+---
+title: "Code 3"
+date: "2020-06-10"
+due_date: "2020-06-10"
+due_time: "11:59 PM"
+menu:
+  assignment:
+    parent: Code
+    weight: 4
+type: docs
+weight: 1
+output:
+  blogdown::html_page:
+    toc: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# In-class, [deep-learning-with-r-notebooks](https://github.com/jjallaire/deep-learning-with-r-notebooks)
+
+- `4.4-overfitting-and-underfitting.Rmd` - IMDB, comparins smaller and bigger network performance
+- `6.1-one-hot-encoding-of-words-or-characters.Rmd` - One-hot-encoding toy example
+- `6.1-using-word-embeddings.Rmd` - embedding, IMDB, using pretrained Glove model
+
+# Self-study, [dl-keras-tf](https://github.com/rstudio-conf-2020/dl-keras-tf)
+
+- Review and run `dl-keras-tf/materials/06-word-embeddings/01-word-embeddings.Rmd` and `02-pretrained-word-embeddings.Rmd`, parallels `6.1-using-word-embeddings.Rmd`
+- Review and run `dl-keras-tf/materials/03-recipe/01-starter-recipe.Rmd` - MNIST example, data preparation, optimizer selection, callbacks, parameter grid search, L2 regularization, dropout, confusion matrix
