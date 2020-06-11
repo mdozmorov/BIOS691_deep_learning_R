@@ -22,9 +22,9 @@ lessons:
 
   - title: '**Day 4: Convolutional Neural Networks, images**'
     date: "June 11"
-#    reading: "04-reading"
-#    assignment: "04-problem-set"
-#    class: "04-class"
+    reading: "04-reading"
+    assignment: "04-problem-set"
+    class: "04-class"
 
   - title: "**Day 5: Generative Adversarial Networks, Autoencoders, Recurrent Neural Networks, LSTMs, sequence learning**"
     date: "June 12"

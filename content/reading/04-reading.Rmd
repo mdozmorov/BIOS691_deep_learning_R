@@ -1,0 +1,22 @@
+---
+title: "Day 4: Convolutional Neural Networks, images"
+# linktitle: "1: Introduction to R/RStudio and Images"
+date: "2020-06-11"
+read_date: "2020-06-11"
+menu:
+  reading:
+    parent: Readings
+    weight: 4
+type: docs
+---
+
+- [Deep learning with R: Chapter 5](https://www.manning.com/books/deep-learning-with-r) - Deep learning for computer vision
+- [Artificial Intelligence book: Convolution](https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/convolution.html) - Explaining 1D and 2D convolution, padding, stride. [Convolutional Neural Networks](https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/convolutional_neural_networks.html) provide further details on CNNs, references, and Youtube videos
+- [Convolutional Neural Network](https://towardsdatascience.com/covolutional-neural-network-cb0883dd6529) - Learn Convolutional Neural Network from basic and its implementation in Keras. Animated illustrations, definitions, Python code
+- [Neural Networks and Deep Learning book, Chapter 6: Deep convolutional networks](http://neuralnetworksanddeeplearning.com/chap6.html) - Illustrated principles of image learning, Python/Theano implementation
+- [Analytics Vidhya: Demystifying the Mathematics Behind Convolutional Neural Networks (CNNs)](https://www.analyticsvidhya.com/blog/2020/02/mathematics-behind-convolutional-neural-network/) - A good description of CNN network, filters, convolution layers, and the math of forward and backward propagation
+- [Analytics Vidhya: A Comprehensive Tutorial to learn Convolutional Neural Networks from Scratch](https://www.analyticsvidhya.com/blog/2018/12/guide-convolutional-neural-network-cnn/) - Illustrated theory of CNNs
+- [Image Classification with Convolutional Neural Networks](https://medium.com/@ksusorokina/image-classification-with-convolutional-neural-networks-496815db12a8) - Medium blog post about theory, definitions, and Keras/Tensorflow model construction in Python
+
+- [Convolutional Neural Networks | MIT 6.S191](https://youtu.be/iaSUYvmCekI) - CNN explained
+- [DeepLizard: Convolutional Neural Networks (CNNs) Explained](https://deeplizard.com/learn/video/YRhxdVk_sIs) - 9min video and illustrated text about CNNs

@@ -1,0 +1,30 @@
+---
+title: "Code 4"
+date: "2020-06-11"
+due_date: "2020-06-11"
+due_time: "11:59 PM"
+menu:
+  assignment:
+    parent: Code
+    weight: 5
+type: docs
+weight: 1
+output:
+  blogdown::html_page:
+    toc: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# In-class, [deep-learning-with-r-notebooks](https://github.com/jjallaire/deep-learning-with-r-notebooks)
+
+- `5.1-introduction-to-convnets.Rmd` - MNIST, CNN
+- `5.2-using-convnets-with-small-datasets.Rmd` - cats_and_dogs classification, CNN
+- `5.3-using-a-pretrained-convnet.Rmd` - cats_and_dogs, VGG16 pretrained CNN, second part needs GPU
+- `5.4-visualizing-what-convnets-learn.Rmd` - CNV visualization, not working
+
+# Self-study, [dl-keras-tf](https://github.com/rstudio-conf-2020/dl-keras-tf)
+
+- Review and run `dl-keras-tf/materials/04-computer-vision-CNNs/01-mnist-revisited.Rmd` - CNN on MNIST dataset, plus small exercise
+- Review and run `dl-keras-tf/materials/04-computer-vision-CNNs/02-cats-vs-dogs.Rmd` - CNN on cats and dogs, parallels `5.2-using-convnets-with-small-datasets.Rmd`
+- Review and run `dl-keras-tf/materials/04-computer-vision-CNNs/03-transfer-learning.Rmd` - transfer learning using VGG16 model, cats and dogs, run until GPU part, review how GPU part works
