@@ -18,10 +18,13 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Final project
+# Overview
 
-- Teams of two are encouraged
-- Due date is 07/12/2020
+- Review the project requirements. Project is required for credit-seeking students and optional for guests
+- Sign up for the final project at the [BIOS691 Final project sign-up](https://docs.google.com/forms/d/e/1FAIpQLSdP7FmBU97n78NjjUmZAPbiUmKBUUsqlE8HT87e_Fi1vyeLKQ/viewform?usp=pp_url&entry.1371427453=Yes,+I+am+a+student&entry.1100386697=Yes,+I+have+a+teammate) form, due **06/19/2020**
+    - Teams of two are encouraged - both teammates should agree and sign up
+- Project proposal submission due **06/26/2020**
+- Final project submission due **07/12/2020**
 - Ask questions by e-mail
 
 ## Data
@@ -35,6 +38,18 @@ editor_options:
     - [Dog Breed Identification](https://www.kaggle.com/c/dog-breed-identification) - determine the breed of a dog in an image
 
 - Explore [Kaggle datasets](https://www.kaggle.com/datasets) for other interesting projects
+- Consult with the instructor if you would like to use your own data
+
+## Proposal Submission (due 06/26/2020)
+
+- Register on [GitHub](https://github.com/). Learn about GitHub in the section [4 - Git and GitHub](https://mdozmorov.github.io/BIOS691.2018/syllabus/) of the [Reproducible research tools](https://mdozmorov.github.io/BIOS691.2018/)
+- Create a repository for your project
+    - If teamwork, add your teammate as a collaborator
+- Add README file describing the selected project. Address the following points:
+    - Data type (numerical, text, or images), link to the data source
+    - Problem type (binary or multiclass classification, regression)
+    - Proposed network architecture (feed-forward, CNN, RNN, etc.), testing multiple architectures encouraged
+
 
 ## Solution
 
@@ -42,15 +57,14 @@ editor_options:
 - Describe and implement data download and processing
 - Select, justify, and implement a network architecture suitable for the data
 - Train and evaluate the performance of the network
-- Tweak network architecture, if needed, to improve model performance
+- Tweak network architecture, add regularization, if needed, to improve model performance
 - Explain all steps, describe the achieved performance
 
 Many Kaggle competitions allow for late submissions in the form of text files with, e.g., samples and predicted classes. Such submissions will be benchmarked against previous submissions, and you will be able to compare how your model performs with respect to previous solutions.
 
-# Submission
+# Final Submission (due 07/12/2020)
 
-- Register on [GitHub](https://github.com/). Learn about GitHub in the section [4 - Git and GitHub](https://mdozmorov.github.io/BIOS691.2018/syllabus/) of the [Reproducible research tools](https://mdozmorov.github.io/BIOS691.2018/)
-- Create a repository with your code solving the selected competition
+- Add your code solving the selected competition to your GitHub repository
     - Your code should run (knit) with minimal modifications, e.g., adjusting path
     - If teamwork, ensure that both participants committed to the repository
     
