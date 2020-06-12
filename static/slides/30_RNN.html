@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Deep Learning with R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Mikhail Dozmorov" />
+    <meta name="date" content="2020-06-12" />
+    <script src="libs/header-attrs-2.1/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="xaringan-my.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Deep Learning with R
+## Recurrent Neural Networks, LSTMs, 1D CNNs
+### Mikhail Dozmorov
+### Virginia Commonwealth University
+### 2020-06-12
+
+---
+
+
+
+
+## Recurrent neural networks (RNN)
+
+- Fully connected networks and CNNs do not have memory - each input is processed independently
+
+- While convolutional neural networks can efficiently process spatial information, recurrent neural networks are designed to better handle sequential information
+
+- RNNs apply the same operation to each sequence element. The operation takes as input the memory of the previous sequence element and the new input. It updates the memory and optionally emits an output, which is either passed on to subsequent layers or is directly used as model predictions
+
+---
+## RNN applications
+
+- Recurrent Neural Networks, or RNNs, were designed to work with sequence prediction problems, natural language processing
+    - One-to-Many: An observation as input mapped to a sequence with multiple steps as an output
+    - Many-to-One: A sequence of multiple steps as input mapped to class or quantity prediction
+    - Many-to-Many: A sequence of multiple steps as input mapped to a sequence with multiple steps as output
+
+.small[https://machinelearningmastery.com/when-to-use-mlp-cnn-and-rnn-neural-networks/
+
+https://app.wandb.ai/wandb/huggingtweets/reports/HuggingTweets-Train-a-model-to-generate-tweets--VmlldzoxMTY5MjI
+]
+
+---
+## Recurrent neural networks (RNN) 
+
+.center[&lt;img src="img/recurrent.jpg" height=250&gt;]
+
+.small[https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/recurrent_neural_networks.html]
+
+---
+## Recurrent neural networks (RNN) 
+
+- RNNs are specifically designed to model space-temporal structures because they consider information from multiple previous layers. Most frequently used in time series, text, audio data analysis
+
+- In the RNN model, the current hidden layer is a nonlinear function of both the previous layer(s) and the current input (x). The model has memory since it has a bias based on the "past"
+
+.center[&lt;img src="img/rnn_example1.png" height=250&gt;]
+
+---
+## Recurrent neural networks (RNN) 
+
+Scheme of recurrent neural networks (RNNs): The left part of the image (in colors) shows the whole network structure; whereas, the recursive structure of the network is shown in the right, where `\(x\)` represents inputs, `\(h\)` are the hidden layers, `\(o = Vh^{(t)} + b\)` are the outputs, `\(y\)` are the target variables, and `\(L\)` is the loss function.
+
+.center[&lt;img src="img/rnn_example1.png" height=250&gt;]
+
+.small[https://www.analyticsvidhya.com/blog/2020/04/comprehensive-popular-deep-learning-interview-questions-answers/]
+
+---
+## RNN mathematical definition
+
+- The predicted output at time `\(t\)`, `\(\hat{y}^{(t)}\)`, is a nonlinear function of `\(h^{(t)}\)` and bias `\(b_1\)`, where `\(V\)` is a weight matrix
+
+`$$\hat{y}^{(t)} = g(V h^{(t)} + b_1 )$$`
+- The current hidden layer `\(h^{(t)}\)` is a nonlinear function of the previous layer `\(h^{(t - 1)}\)` of the current input `\((x)\)` and of bias, `\(b_0\)`
+`$$h^{(t)} = f(W h^{(t - 1)} + Ux^{(t)} + b_0) \ (a)$$`
+
+- `\(W\)` and `\(U\)` are weight matrices to be estimated. If `\(x\)` represents a sequence-like dataset, `\(x^{(t)}\)` refers to the value of `\(x\)` at time `\(t\)` 
+
+---
+## Word-level RNN language model
+
+.center[&lt;img src="img/0_Text.svg.png" height=450&gt;]
+
+.small[https://d2l.ai/chapter_recurrent-neural-networks/rnn.html]
+
+---
+## Backpropagation through time
+
+- Backpropagation through time requires to expand the recurrent neural network one timestep at a time to obtain the dependencies between model variables and parameters
+- Then, based on the chain rule, we apply backpropagation to compute and store gradients
+- Since sequences can be rather long, the dependency can be rather lengthy
+
+A number of methods have been proposed to address this. One of the earliest is Long Short Term Memory (LSTM) [Hochreiter &amp; Schmidhuber, 1997]. Gated Recurrent Unit (GRU) [Cho et al., 2014] is a slightly more streamlined variant that often offers comparable performance and is significantly faster to compute. 
+
+.small[https://d2l.ai/chapter_recurrent-neural-networks/bptt.html]
+
+---
+## RNN improvements
+
+- Sequence elements are not created equal - some may be more important than the other. E.g., introductory words may be highly predictive of a future story. Need _memory cell_ to store such information
+
+- Some elements may be not important at all, e.g., HTML formatting tags around the actual text. Need _skipping mechanism_ to forget such elements
+
+- Some parts of the sequence may be disjoint, e.g., book chapters. Need _reset_ mechanism to refresh internal state representations
+
+---
+## Gated Recurrent Units (GRU)
+
+- Gated recurrent neural networks are better at capturing dependencies for time series with large timestep distances
+
+- Reset gates help capture short-term dependencies in time series
+
+- Update gates help capture long-term dependencies in time series
+
+- GRUs contain basic RNNs as their extreme case whenever the reset gate is switched on. They can ignore sequences as needed
+
+.small[https://d2l.ai/chapter_recurrent-modern/gru.html]
+
+---
+## Gated Recurrent Units (GRU)
+
+.center[&lt;img src="img/gru_3.svg.png" height=450&gt;]
+
+.small[https://d2l.ai/chapter_recurrent-modern/gru.html]
+
+---
+## Long Short-Term Memory (LSTM)
+
+- One major issue with RNN is that although it should theoretically be able to retain at time t information about inputs seen many timesteps before, in practice, such long-term dependencies are impossible to learn due to vanishing gradient problem
+
+- LSTM allows past information to be reinjected at a later time, thus fighting the vanishing-gradient problem
+
+- LSTM’s design is slightly more complex than GRU but predates GRU by almost two decades
+
+---
+## Long Short-Term Memory (LSTM)
+
+LSTM neuron has four mechanisms: 1) Forget, 2) Store, 3) Update, 4) Output
+
+.center[&lt;img src="img/lstm_3.svg.png" height=450&gt;]
+
+.small[https://d2l.ai/chapter_recurrent-modern/lstm.html]
+
+---
+## Long Short-Term Memory (LSTM)
+
+- LSTMs have three types of gates: input gates, forget gates, and output gates which control the flow of information
+
+- The hidden layer output of LSTM includes hidden states and memory cells. Only hidden states are passed into the output layer. Memory cells are entirely internal
+
+- LSTMs can cope with vanishing and exploding gradients
+
+.small[https://d2l.ai/chapter_recurrent-modern/lstm.html]
+
+---
+## Deep Recurrent Neural Networks
+
+- A single unidirectional hidden layer in LSTMs and GRUs may be insufficient to capture the full complexity of sequences. Several strategies to increase the flexibility
+    - Add nonlinearity to the gating mechanisms
+    - Increase the number of units in the hidden layer
+    - Stack multiple layers on top of each other. The intermediate layers should return the full sequence of outputs (hidden state information), not the outputs at the last time step. Highly computationally intensive
+
+---
+## Bidirectional Recurrent Neural Networks
+
+- Bidirectional RNN looks at its input sequence both ways, obtaining potentially richer representations and capturing patterns that may have been missed by the chronological-order version alone
+
+- In bidirectional recurrent neural networks, the hidden state for each timestep is simultaneously determined by the data prior to and after the current timestep
+
+- Bidirectional RNNs are exceedingly slow due to they require both a forward and a backward pass and that the backward pass is dependent on the outcomes of the forward pass. Hence, gradients will have a very long dependency chain
+
+---
+## Bidirectional Recurrent Neural Networks
+
+.center[&lt;img src="img/birnn.svg.png" height=450&gt;]
+
+.small[https://d2l.ai/chapter_recurrent-modern/bi-rnn.html]
+ 
+---
+## Overfitting in RNNs
+
+- Dropout - the same dropout mask (the same pattern of dropped units) should be applied at every timestep, instead of a dropout mask that varies randomly from timestep to timestep
+    - Every recurrent layer in Keras has two dropout-related arguments: dropout, a float specifying the dropout rate for input units of the layer, and recurrent_dropout, specifying the dropout rate of the recurrent units
+
+---
+## CNNs for sequence processing
+
+- CNNs extract features from local input patches, which can be time periods, sequence chunks
+    - Not sensitive to time order
+
+- Much faster than RNNs, but inferior performance
+    - Use a 1D convnet as a preprocessing step before an RNN
+
+- Used for machine translation (sequence-to-sequence), document classification, spelling correction
+
+---
+## 1D convolution
+
+- Use 1D convolutions, extracting local 1D patches (sub-sequences) from sequences
+- The convnet will turn the long input sequence into much shorter (downsampled) sequences of higher-level features
+
+.center[&lt;img src="img/1d_convolution.png" height=350&gt;]
+
+---
+## 1D pooling
+
+- CNNs for sequence processing have a similar structure like regular convnets - they consist of stacks of layer_conv_1ds and layer_ max_pooling_1ds, ending in a global pooling operation or flattening operation
+
+- 1D pooling extracts 1D patches (subsequences) from the input and outputs the maximum value (max pooling) or average value (average pooling)
+
+- For 2D convnets, we used kernel size equal to 3, so a `\(3 \times 3\)` convolution window contains 9 feature vectors. For 1D, we use one dimension, so our window size (kernel) can be 7 or 9
+
+---
+## RNNs vs. 1D convnets
+
+- If global order matters in your sequence data, then it’s preferable to use a recurrent network. This is typically the case for time series, where the recent past is likely to be more informative than the distant past
+
+- If global ordering isn’t fundamentally meaningful, then 1D convnets will turn out to work at least as well and are cheaper. This is often the case for text data, where a keyword found at the beginning of a sentence is just as meaningful as a keyword found at the end
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

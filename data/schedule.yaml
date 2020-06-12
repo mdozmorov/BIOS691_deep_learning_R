@@ -26,11 +26,11 @@ lessons:
     assignment: "04-problem-set"
     class: "04-class"
 
-  - title: "**Day 5: Generative Adversarial Networks, Autoencoders, Recurrent Neural Networks, LSTMs, sequence learning**"
+  - title: "**Day 5: Generative Adversarial Networks, Autoencoders, Recurrent Neural Networks, LSTM, GRU, sequence learning**"
     date: "June 12"
-#    reading: "05-reading"
-#    assignment: "05-problem-set"
-#    class: "05-class"
+    reading: "05-reading"
+    assignment: "05-problem-set"
+    class: "05-class"
 
 #  - title: "**Notebook 2 due**"
 #    date: "April 16"

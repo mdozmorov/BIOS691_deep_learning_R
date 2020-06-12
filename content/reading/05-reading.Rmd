@@ -1,0 +1,26 @@
+---
+title: "Day 5: Generative Adversarial Networks, Autoencoders, Recurrent Neural Networks, LSTM, GRU, sequence learning"
+# linktitle: "1: Introduction to R/RStudio and Images"
+date: "2020-06-12"
+read_date: "2020-06-12"
+menu:
+  reading:
+    parent: Readings
+    weight: 5
+type: docs
+---
+
+- [Deep learning with R: Chapter 6.2](https://www.manning.com/books/deep-learning-with-r) - Understanding RNN, LSTM, GRU layers
+- [Recurrent Neural Networks | MIT 6.S191](https://youtu.be/SEnXr6v2ifU) - RNN and LSTM overview
+
+- [Deep learning with R: Chapter 8](https://www.manning.com/books/deep-learning-with-r) - Generarive deep learning
+- [Deep Generative Modeling | MIT 6.S191](https://youtu.be/rZufA635dq4) - GAN, Autoencoder, Variational autoencoder
+
+- [Generative Models](https://openai.com/blog/generative-models/) - This post describes four projects that share a common theme of enhancing or using generative models, a branch of unsupervised learning techniques in machine learning
+- [A Friendly Introduction to Generative Adversarial Networks (GANs)](https://youtu.be/8L11aMN5KY8) - 20m video by Luis Serrano. [GitHub repo](https://github.com/luisguiserrano/gans)
+
+- Goodfellow, Ian J., Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio. “[Generative Adversarial Networks](http://arxiv.org/abs/1406.2661).” ArXiv:1406.2661 [Cs, Stat], June 10, 2014
+
+- Goodfellow, Ian. “[NIPS 2016 Tutorial: Generative Adversarial Networks](http://arxiv.org/abs/1701.00160).” ArXiv:1701.00160 [Cs], April 3, 2017
+
+- Pierre Baldi. “[Autoencoders, Unsupervised Learning, and Deep Architectures](http://proceedings.mlr.press/v27/baldi12a.html).” In Proceedings of ICML Workshop on Unsupervised and Transfer Learning, edited by Isabelle Guyon, Gideon Dror, Vincent Lemaire, Graham Taylor, and Daniel Silver, 37–49. PMLR, 2012 - Mathematical framework of autoencoders.
