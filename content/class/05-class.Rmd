@@ -40,3 +40,13 @@ knitr::include_url('../../slides/30_RNN.html#1')
 ```{r echo=FALSE}
 knitr::include_url('../../slides/31_GAN.html#1')
 ```
+
+### Glossary
+
+<a href="../../slides/32_Glossary.html#1" target="_blank">Lecture slides in HTML format</a>
+
+<a href="../../slides/32_Glossary.pdf" target="_blank">Lecture handouts in PDF format</a>
+
+```{r echo=FALSE}
+knitr::include_url('../../slides/32_Glossary.html#1')
+```
