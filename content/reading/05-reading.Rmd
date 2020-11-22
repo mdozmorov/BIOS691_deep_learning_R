@@ -13,6 +13,8 @@ type: docs
 - [Deep learning with R: Chapter 6.2](https://www.manning.com/books/deep-learning-with-r) - Understanding RNN, LSTM, GRU layers
 - [Recurrent Neural Networks | MIT 6.S191](https://youtu.be/SEnXr6v2ifU) - RNN and LSTM overview
 
+- Lipton, Zachary C., John Berkowitz, and Charles Elkan. “[A Critical Review of Recurrent Neural Networks for Sequence Learning](http://arxiv.org/abs/1506.00019).” ArXiv:1506.00019 [Cs], October 17, 2015 - Recurrent Neural network review. Introduction to neural networks, forward and backpropagation, gradient descent. RNN architecture and math, Hopfield networks. LSTMs, Bidirectional RNNs, Neural Turing Machines.
+
 - [Deep learning with R: Chapter 8](https://www.manning.com/books/deep-learning-with-r) - Generarive deep learning
 - [Deep Generative Modeling | MIT 6.S191](https://youtu.be/rZufA635dq4) - GAN, Autoencoder, Variational autoencoder
 
