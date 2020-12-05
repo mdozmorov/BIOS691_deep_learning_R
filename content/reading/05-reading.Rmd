@@ -20,6 +20,8 @@ type: docs
 
 - [Understanding LSTM Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
+- Hochreiter, Sepp, and Jürgen Schmidhuber. “[Long Short-Term Memory](https://www.bioinf.jku.at/publications/older/2604.pdf).” Neural Computation 9, no. 8 (1997): 1735–1780.
+
 - [LSTM is dead. Long Live Transformers!](https://youtu.be/S27pHKBEp30) - Crash course into LSTM and transformers, 30min video 
 
 - Vaswani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. “[Attention Is All You Need](https://arxiv.org/abs/1706.03762” - Transformers paper
