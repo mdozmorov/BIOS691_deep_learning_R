@@ -22,6 +22,8 @@ type: docs
 
 - [LSTM is dead. Long Live Transformers!](https://youtu.be/S27pHKBEp30) - Crash course into LSTM and transformers, 30min video 
 
+- Vaswani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. “[Attention Is All You Need](https://arxiv.org/abs/1706.03762” - Transformers paper
+
 - [Generative Models](https://openai.com/blog/generative-models/) - This post describes four projects that share a common theme of enhancing or using generative models, a branch of unsupervised learning techniques in machine learning
 - [A Friendly Introduction to Generative Adversarial Networks (GANs)](https://youtu.be/8L11aMN5KY8) - 20m video by Luis Serrano. [GitHub repo](https://github.com/luisguiserrano/gans)
 
