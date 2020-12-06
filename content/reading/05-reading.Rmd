@@ -18,6 +18,8 @@ type: docs
 - [Deep learning with R: Chapter 8](https://www.manning.com/books/deep-learning-with-r) - Generarive deep learning
 - [Deep Generative Modeling | MIT 6.S191](https://youtu.be/rZufA635dq4) - GAN, Autoencoder, Variational autoencoder
 
+- [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) - blog post by Andrej Karpathy
+
 - [Understanding LSTM Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
 - Hochreiter, Sepp, and Jürgen Schmidhuber. “[Long Short-Term Memory](https://www.bioinf.jku.at/publications/older/2604.pdf).” Neural Computation 9, no. 8 (1997): 1735–1780.
